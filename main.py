@@ -134,7 +134,7 @@ def open_bullet():
             stdout,stderr = p.communicate()
             #outputfinal = stdout.decode("utf-8").replace('\r\n','\r')
             outputfinal = ((stdout).decode("utf-8"))
-            notify(outputfinal)
+            #notify(outputfinal)
             return jsonify(outputfinal)
     else:
         return jsonify("No license detected")
@@ -145,7 +145,7 @@ def isArgument(argumentStr):
 
 #@app.route('/api/v1/notif/<msg>')
 def notify(msg):
-    url = "https://discordapp.com/api/webhooks/710572272112631869/m-BtfENjeeoB3GwHeYbIXQfx4PUNDbb9FKaNtr5SCtnTjlMWYusAcwjgTidddO3PM24j"
+    url = "secret_webhook_url"
     username = "tester"
     return jsonify(sendMsg(msg,username,url))
 
